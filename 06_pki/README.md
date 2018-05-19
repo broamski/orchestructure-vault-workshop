@@ -1,4 +1,4 @@
-# 05 - PKI
+# 06 - PKI
 
 - `vault secrets enable pki`
 - `vault secrets tune -max-lease-ttl=8760h pki`

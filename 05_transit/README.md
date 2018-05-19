@@ -1,4 +1,4 @@
-# 04 - Transit Engine
+# 05 - Transit Engine
 
 - `vault secrets enable transit`
 - `vault write -f transit/keys/test exportable=true allow_plaintext_backup=true type=rsa-4096`

@@ -1,4 +1,4 @@
-# 03 - Audit
+# 04 - Audit
 - `vault audit enable file file_path=stdout hmac_accessor=false`
 
 
