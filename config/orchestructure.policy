@@ -1,0 +1,11 @@
+path "secret/orchestructure" {
+  capabilities = ["read"]
+}
+
+path "secret/orchestructure/*" {
+  capabilities = ["create"]
+  allowed_parameters = {
+    "foo" = ["bar"]
+    "private_key" = []
+  }
+}
