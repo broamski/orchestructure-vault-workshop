@@ -6,11 +6,11 @@
 
 #### Inspect your current token
 - `vault token lookup`
-- `vault token lookup -accessor <grab accessor from previous command>`
 - `echo ~/.vault-token`
 
 #### Write and Read Some Things
 - `vault read secret/orchestructure`
+- `vault write secret/orchestructure/YOURVALUE foo2=bar private_key="anything you want"`
 - `vault write secret/orchestructure/YOURVALUE foo=bar private_key="anything you want"`
 
 #### Create Tokens
@@ -23,12 +23,11 @@
     - -orphan
 
 - `vault token create -policy=orchestructure -display-name=subtoken`
-- `vault token create -policy=orchestructure -display-name=subtoken -ttl=10s`
-- `VAULT_TOKEN=TOKEN vault read secret/tokentest (until time up)`
+- `vault token create -policy=orchestructure -display-name=subtoken -ttl=60s`
+- `VAULT_TOKEN=TOKEN vault kv get secret/orchestructure`
 - `vault token create -policy=orchestructure -display-name=subtoken -use-limit=2`
-- `VAULT_TOKEN=TOKEN vault read secret/tokentest (x2)`
+- `VAULT_TOKEN=TOKEN vault kv get secret/orchestructure` (x2)
 
 #### Revoke Tokens
-- `vault token revoke <token>`
-- `vault token revoke -accessor <accessor>`
 - `vault token revoke -self`
+- `vault token revoke <token>` (root only)

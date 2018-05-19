@@ -2,6 +2,10 @@ path "secret/orchestructure" {
   capabilities = ["read"]
 }
 
+path "secret/orchestructure/" {
+  capabilities = ["list"]
+}
+
 path "secret/orchestructure/*" {
   capabilities = ["create"]
   allowed_parameters = {

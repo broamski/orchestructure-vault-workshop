@@ -7,6 +7,14 @@ path "auth/token/lookup-self" {
     capabilities = ["read"]
 }
 
+path "auth/token/lookup-accessor" {
+    capabilities = ["read"]
+}
+
+path "auth/token/create" {
+capabilities = ["create", "update"]
+}
+
 # Allow tokens to renew themselves
 path "auth/token/renew-self" {
     capabilities = ["update"]
